@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced To-Do</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>✅ Advanced To-Do</h1>
+      <div class="header-controls">
+        <label class="toggle">
+          <input id="dark-toggle" type="checkbox" />
+          <span>Dark</span>
+        </label>
+        <div class="header-buttons">
+          <button id="export-json">Export JSON</button>
+          <button id="export-csv">Export CSV</button>
+          <label class="import-label">
+            <input id="import-file" type="file" accept=".json" hidden />
+            <button id="import-json">Import</button>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="left">
+        <form id="task-form" class="task-form">
+          <input id="task-input" type="text" placeholder="Task title..." required />
+          <select id="project-select"></select>
+          <input id="due-input" type="date" />
+          <select id="priority-select">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit">Add</button>
+        </form>
+
+        <div class="controls">
+          <input id="search" type="search" placeholder="Search tasks..." />
+          <select id="status-filter">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+            <option value="overdue">Overdue</option>
+          </select>
+          <select id="priority-filter">
+            <option value="all">All priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <select id="project-filter">
+            <option value="all">All projects</option>
+          </select>
+        </div>
+
+        <div class="list-controls">
+          <button id="clear-completed">Clear Completed</button>
+          <button id="add-project">+ Project</button>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+      </section>
+
+      <aside class="right">
+        <div class="card stats">
+          <h3>Stats</h3>
+          <p>Total: <span id="total-count">0</span></p>
+          <p>Completed: <span id="completed-count">0</span></p>
+          <p>Pending: <span id="pending-count">0</span></p>
+          <p>Overdue: <span id="overdue-count">0</span></p>
+        </div>
+
+        <div class="card actions">
+          <h3>Sort / Quick</h3>
+          <button id="sort-date">Sort by Due</button>
+          <button id="sort-priority">Sort by Priority</button>
+        </div>
+
+        <div class="card projects">
+          <h3>Projects</h3>
+          <ul id="projects-list"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">Local only • Drag & drop to reorder • Data saved to localStorage</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
