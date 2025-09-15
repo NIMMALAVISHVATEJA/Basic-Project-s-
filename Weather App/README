@@ -1,0 +1,13 @@
+# Weather App (Advanced)
+Features:
+- Search by city, use geolocation
+- Current weather + 5-day forecast
+- Favorites (localStorage), caching
+- Unit toggle °C/°F, Dark mode
+- Export/import options (To-Do app only)
+
+Setup:
+1. Clone the repo.
+2. For Weather: signup at https://openweathermap.org and get an API key.
+3. Replace `YOUR_API_KEY_HERE` in `script.js` with your key.
+4. Open `index.html` in browser (no server required).

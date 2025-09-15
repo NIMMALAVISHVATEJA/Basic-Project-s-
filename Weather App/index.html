@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="weather-app">
+    <h1>🌦 Weather Dashboard</h1>
+
+    <div class="search-bar">
+      <!-- Input with autocomplete -->
+      <input list="cities" type="text" id="city-input" placeholder="Enter city..." />
+      <datalist id="cities"></datalist>
+      <button id="search-btn">Search</button>
+      <button id="toggle-mode">🌙</button>
+    </div>
+
+    <div class="weather-info"></div>
+    <canvas id="forecastChart"></canvas>
+
+    <h2>⭐ Favorites</h2>
+    <ul id="favorites"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
